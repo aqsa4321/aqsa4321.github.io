@@ -31,6 +31,22 @@
             text-align: center;
         }
 
+        .header-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
         .header-content h1 {
             font-size: 3rem;
             margin-bottom: 10px;
@@ -193,6 +209,11 @@
                 font-size: 2rem;
             }
             
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
             .contact-info {
                 flex-direction: column;
                 gap: 10px;
@@ -212,14 +233,17 @@
 <body>
     <header>
         <div class="container">
-            <div class="header-content">
-                <h1>Aqsa Yousaf</h1>
-                <p class="subtitle">Ph.D. Candidate in Computer Science | AI Researcher | Computer Vision Expert</p>
-                <div class="contact-info">
-                    <a href="tel:659-228-1720">📞 (659) 228-1720</a>
-                    <a href="mailto:aqsa.yousaf.dogar@gmail.com">✉️ aqsa.yousaf.dogar@gmail.com</a>
-                    <a href="https://linkedin.com/in/aqsa-yousaf" target="_blank">🔗 LinkedIn</a>
-                    <a href="https://github.com/aqsa-yousaf" target="_blank">💻 GitHub</a>
+            <div class="header-profile">
+                <img src="images/1.jpg" alt="Aqsa Yousaf" class="profile-image">
+                <div class="header-content">
+                    <h1>Aqsa Yousaf</h1>
+                    <p class="subtitle">Ph.D. Candidate in Computer Science | AI Researcher | Computer Vision Expert</p>
+                    <div class="contact-info">
+                        <a href="tel:659-228-1720">📞 (659) 228-1720</a>
+                        <a href="mailto:aqsa.yousaf.dogar@gmail.com">✉️ aqsa.yousaf.dogar@gmail.com</a>
+                        <a href="https://linkedin.com/in/aqsa-yousaf" target="_blank">🔗 LinkedIn</a>
+                        <a href="https://github.com/aqsa-yousaf" target="_blank">💻 GitHub</a>
+                    </div>
                 </div>
             </div>
         </div>
