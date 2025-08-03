@@ -3,36 +3,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Aqsa Yousaf - Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header-content .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 1;
+        }
+
+        nav {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .card {
             background: white;
             padding: 30px;
             border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .education-item, .experience-item {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .education-item h3, .experience-item h3 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .date-location {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .project-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .publications ul, .awards ul {
+            list-style: none;
+        }
+
+        .publications li, .awards li {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        h1 { color: #333; }
-        .section { margin: 20px 0; }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Portfolio</h1>
-        <div class="section">
-            <h2>About Me</h2>
-            <p>This is my portfolio website. More content coming soon!</p>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Aqsa Yousaf</h1>
+                <p class="subtitle">Ph.D. Candidate in Computer Science | AI Researcher | Computer Vision Expert</p>
+                <div class="contact-info">
+                    <a href="tel:659-228-1720">📞 (659) 228-1720</a>
+                    <a href="mailto:aqsa.yousaf.dogar@gmail.com">✉️ aqsa.yousaf.dogar@gmail.com</a>
+                    <a href="https://linkedin.com/in/aqsa-yousaf" target="_blank">🔗 LinkedIn</a>
+                    <a href="https://github.com/aqsa-yousaf" target="_blank">💻 GitHub</a>
+                </div>
+            </div>
         </div>
-        <div class="section">
-            <h2>Projects</h2>
-            <p>My projects will be listed here.</p>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#awards">Awards</a></li>
+            </ul>
         </div>
-    </div>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="card">
+                <p style="font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto;">
+                    Ph.D. candidate in Computer Science with a strong interest in medical imaging, explainable AI, and 3D scene reconstruction. My work spans across computer vision, including object detection (RT-DETR, DINO-DETR, YOLO), generative models (GANs), and Gaussian splatting for 3D reconstruction, as well as sensor signal processing for wearable healthcare systems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="card">
+                <div class="education-item">
+                    <h3>Ph.D. in Computer Science</h3>
+                    <div class="date-location">August 2023 - Present | Arlington, Texas, USA</div>
+                    <p><strong>The University of Texas at Arlington</strong> | CGPA: 4.0/4.0</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3>M.S. in Computer Science</h3>
+                    <div class="date-location">January 2018 - November 2020 | Islamabad, Pakistan</div>
+                    <p><strong>Pakistan Institute of Engineering & Applied Sciences</strong> | CGPA: 3.8/4.0</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3>B.Sc. in Electrical Engineering</h3>
+                    <div class="date-location">September 2014 - June 2018 | Lahore, Pakistan</div>
+                    <p><strong>University of Engineering and Technology</strong> | CGPA: 3.52/4.0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="card">
+                <div class="experience-item">
+                    <h3>Research Assistant</h3>
+                    <div class="date-location">August 2022 – August 2023 | Tuscaloosa, Alabama</div>
+                    <p><strong>Computer Laboratory of Ambient and Wearable Systems</strong></p>
+                    <ul>
+                        <li>Designed an AI system to detect eating events using signals from wearable sensors mounted on eyeglasses</li>
+                        <li>Processed time-series data from accelerometer and piezoelectric muscle sensors to capture head movement and chewing patterns</li>
+                        <li>Implemented a semi-supervised autoencoder to extract meaningful features from unlabeled sensor data</li>
+                        <li>Configured and calibrated wearable sensors for reliable signal acquisition during real-world use</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Computer Vision Engineer</h3>
+                    <div class="date-location">November 2020 – October 2021 | Dublin, Ireland (Remote)</div>
+                    <p><strong>Evercam</strong></p>
+                    <ul>
+                        <li>Developed a custom GAN-based super-resolution model to enhance construction site video feeds from 4K to 8K</li>
+                        <li>Built an end-to-end computer vision pipeline using YOLO for object detection and counting</li>
+                        <li>Improved detection accuracy by integrating super-resolved frames with object tracking</li>
+                        <li>Deployed the full pipeline on AWS for scalable, low-cost construction site monitoring</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Business Development Executive</h3>
+                    <div class="date-location">November 2021 – August 2022 | Islamabad, Pakistan</div>
+                    <p><strong>Red Buffer</strong></p>
+                    <ul>
+                        <li>Interfaced with clients to understand project goals and technical requirements for AI-driven solutions</li>
+                        <li>Authored machine learning and computer vision project proposals with clear methodologies and timelines</li>
+                        <li>Collaborated with engineering teams to translate client requirements into actionable development plans</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Selected Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Beyond Detection: Comparative Explainability Study on Trypanosoma cruzi</h3>
+                    <div class="project-meta">Cyber-Physical System Security Lab @ UTA, 2025</div>
+                    <p>Developed an explainable deep learning framework for automated detection of Trypanosoma cruzi in microscopy images using YOLOv8 and DINO-DETR. Proposed novel query-specific attention explainability methods and benchmarked 10 CAM-based interpretability techniques.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Enhanced Sparse-View Tomographic Reconstruction Using Gaussian Splatting</h3>
+                    <div class="project-meta">Cyber-Physical System Security Lab @ UTA, 2025</div>
+                    <p>Developed a 3D CT reconstruction pipeline for sparse-view X-ray projections using Gaussian Splatting. Achieved +3.08% PSNR and +3.21% SSIM improvements while reducing Gaussians by 10%.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>DAPS-AGF: Depth-Aware Perceptual Similarity with Adaptive Gradient Filtering</h3>
+                    <div class="project-meta">Cyber-Physical System Security Lab @ UTA, 2024</div>
+                    <p>Developed a 3D scene reconstruction framework for outdoor environments. Demonstrated superior visual quality with +3.05% SSIM, +3.94% PSNR, and −17.78% LPIPS compared to baseline.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>SOK: Modeling Post-Hoc Explainability in Clinical Decision Support Systems</h3>
+                    <div class="project-meta">Cyber-Physical System Security Lab @ UTA, 2024 – Present</div>
+                    <p>Conducted comprehensive analysis of post-hoc explainability techniques for clinical decision support. Implemented and benchmarked SHAP, LIME, Grad-CAM, and other XAI methods across tabular and medical image datasets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="publications">
+                <ul>
+                    <li><strong>A. Yousaf</strong>, et al. "Beyond Detection: Comparative Explainability Study on Trypanosoma cruzi Using CAMs and DETR Attention", <em>IEEE BHI, 2025</em>.</li>
+                    <li><strong>A. Yousaf</strong>, et al. "DAPS-AGF: Depth-Aware Perceptual Similarity with Adaptive Gradient Filtering for Enhanced Outdoor Scene Reconstruction", <em>ICCV E2E3D, 2025</em>.</li>
+                    <li><strong>A. Yousaf</strong>, et al. "Food Intake Detection in the Face of Limited Sensor Signal Annotations", <em>International Conference on Communications and Electronics (ICCE), 2024</em>.</li>
+                    <li><strong>A. Yousaf</strong>, et al. "Protein Active Site Prediction for Early Drug Discovery and Designing", <em>International Review of Applied Sciences and Engineering (IRASE), 2021</em>.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="card">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <p>Python, C++, MATLAB, SQL, Bash, JavaScript, HTML/CSS</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Libraries & Frameworks</h4>
+                        <p>PyTorch, TensorFlow, Keras, OpenCV, Scikit-learn, NumPy, Pandas, Seaborn, Matplotlib</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Cloud & DevOps</h4>
+                        <p>AWS (SageMaker, EC2, Lambda, S3), Google Cloud, Azure, Docker, Git, GitHub, GitLab</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Hardware & Sensors</h4>
+                        <p>Raspberry Pi, Arduino, STM32L4, TIVA C, Sensor integration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards">
+        <div class="container">
+            <h2 class="section-title">Awards & Fellowships</h2>
+            <div class="awards">
+                <ul>
+                    <li><strong>STEM Fellowship</strong> - UTA, 2023 - Present, USA</li>
+                    <li><strong>PIEAS Fellowship</strong> - PIEAS, 2019 - 2020, Pakistan</li>
+                    <li><strong>PEEF Scholarship</strong> - UET, 2014 - 2018, Pakistan</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Aqsa Yousaf. All rights reserved.</p>
+            <p>Built with passion for AI and Computer Vision</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
