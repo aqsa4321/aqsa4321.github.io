@@ -14,133 +14,280 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            color: #e0e0e0;
+            background-color: #1a1a1a;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            display: flex;
+            min-height: 100vh;
         }
 
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .header-profile {
+        /* Left Profile Section */
+        .profile-section {
+            width: 400px;
+            background-color: #2a2a2a;
+            padding: 60px 40px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
         }
 
         .profile-image {
-            width: 200px;
-            height: 200px;
+            width: 280px;
+            height: 280px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            border: 4px solid #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
 
-        .header-content h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+        .profile-section h1 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 15px;
             font-weight: 300;
         }
 
-        .header-content .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
+        .profile-section .title {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 1.4;
         }
 
-        .contact-info {
+        .profile-section .university {
+            font-size: 1rem;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .social-links {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.9;
-            transition: opacity 0.3s;
-        }
-
-        .contact-info a:hover {
-            opacity: 1;
-        }
-
-        nav {
-            background: white;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
+        .social-links a {
+            color: #b0b0b0;
+            font-size: 1.5rem;
             transition: color 0.3s;
         }
 
-        nav a:hover {
+        .social-links a:hover {
             color: #667eea;
         }
 
-        section {
-            padding: 60px 0;
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s;
+            margin-bottom: 30px;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
+        .download-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            width: 100%;
+            text-align: left;
+        }
+
+        .contact-info h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #667eea;
+        }
+
+        /* Right Content Section */
+        .content-section {
+            margin-left: 400px;
+            padding: 60px 50px;
+            width: calc(100% - 400px);
+        }
+
+        .content-header {
             margin-bottom: 50px;
-            color: #333;
         }
 
-        .card {
-            background: white;
+        .content-header h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .content-header p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .content-box {
+            background-color: #2a2a2a;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-
-        .education-item, .experience-item {
             border-left: 4px solid #667eea;
-            padding-left: 20px;
-            margin-bottom: 30px;
         }
 
-        .education-item h3, .experience-item h3 {
+        .content-box h3 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .interests-list, .education-list {
+            list-style: none;
+        }
+
+        .interests-list li {
+            color: #b0b0b0;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .interests-list li::before {
+            content: "•";
             color: #667eea;
-            font-size: 1.3rem;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .education-title {
+            color: #ffffff;
+            font-size: 1.1rem;
             margin-bottom: 5px;
         }
 
-        .date-location {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 10px;
+        .education-meta {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .education-school {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+
+        /* Full-width sections */
+        .full-section {
+            background-color: #2a2a2a;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 4px solid #667eea;
+        }
+
+        .full-section h3 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .experience-item, .project-item {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .experience-item:last-child, .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-header {
+            margin-bottom: 15px;
+        }
+
+        .item-title {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .item-meta {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .item-company {
+            color: #b0b0b0;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .item-description {
+            color: #b0b0b0;
+            margin-top: 10px;
+        }
+
+        .item-description ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .item-description li {
+            margin-bottom: 5px;
         }
 
         .skills-grid {
@@ -149,247 +296,281 @@
             gap: 20px;
         }
 
+        .skill-category {
+            background-color: #333333;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid #667eea;
+        }
+
         .skill-category h4 {
-            color: #667eea;
+            color: #ffffff;
             margin-bottom: 10px;
-            font-size: 1.1rem;
         }
 
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-card h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .project-meta {
-            color: #666;
+        .skill-category p {
+            color: #b0b0b0;
             font-size: 0.9rem;
-            margin-bottom: 15px;
         }
 
-        .publications ul, .awards ul {
+        .publications-list {
             list-style: none;
         }
 
-        .publications li, .awards li {
-            background: white;
+        .publications-list li {
+            background-color: #333333;
             padding: 20px;
             margin-bottom: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+            color: #b0b0b0;
+            line-height: 1.5;
         }
 
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 40px 0;
+        .awards-list {
+            list-style: none;
+        }
+
+        .awards-list li {
+            background-color: #333333;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            color: #b0b0b0;
+            border-left: 4px solid #667eea;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .profile-section {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 40px 30px;
+            }
+            
+            .content-section {
+                margin-left: 0;
+                width: 100%;
+                padding: 40px 30px;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
 
         @media (max-width: 768px) {
-            .header-content h1 {
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .profile-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content-header h2 {
                 font-size: 2rem;
             }
             
-            .profile-image {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .project-grid {
-                grid-template-columns: 1fr;
+            .full-section {
+                padding: 25px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-profile">
-                <img src="images/2.jpeg" alt="Aqsa Yousaf" class="profile-image">
-                <div class="header-content">
-                    <h1>Aqsa Yousaf</h1>
-                    <p class="subtitle">Ph.D. Candidate in Computer Science | AI Researcher | Computer Vision Expert</p>
-                    <div class="contact-info">
-                        <a href="tel:659-228-1720">📞 (659) 228-1720</a>
-                        <a href="mailto:aqsa.yousaf.dogar@gmail.com">✉️ aqsa.yousaf.dogar@gmail.com</a>
-                        <a href="https://linkedin.com/in/aqsa-yousaf" target="_blank">🔗 LinkedIn</a>
-                        <a href="https://github.com/aqsa-yousaf" target="_blank">💻 GitHub</a>
+    <div class="container">
+        <!-- Left Profile Section -->
+        <div class="profile-section">
+            <img src="images/2.jpg" alt="Aqsa Yousaf" class="profile-image">
+            <h1>Aqsa Yousaf</h1>
+            <p class="title">PhD Candidate in Computer Science</p>
+            <p class="university">The University of Texas at Arlington</p>
+            
+            <div class="social-links">
+                <a href="mailto:aqsa.yousaf.dogar@gmail.com" title="Email">✉️</a>
+                <a href="https://linkedin.com/in/aqsa-yousaf" target="_blank" title="LinkedIn">🔗</a>
+                <a href="https://github.com/aqsa-yousaf" target="_blank" title="GitHub">💻</a>
+            </div>
+            
+            <a href="Resume.pdf" class="download-btn" download>
+                📄 Download my résumé 
+            </a>
+            
+            <div class="contact-info">
+                <h3>Contact</h3>
+                <div class="contact-item">
+                    <a href="tel:659-228-1720">📞 (659) 228-1720</a>
+                </div>
+                <div class="contact-item">
+                    <a href="mailto:aqsa.yousaf.dogar@gmail.com">✉️ aqsa.yousaf.dogar@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content Section -->
+        <div class="content-section">
+            <div class="content-header">
+                <h2>Biography</h2>
+                <p>
+                    I'm a Ph.D. Candidate in Computer Science department at the University of Texas at Arlington. My primary research interests include medical imaging, explainable AI, and 3D scene reconstruction. My work spans across computer vision, including object detection (RT-DETR, DINO-DETR, YOLO), generative models (GANs), and Gaussian splatting for 3D reconstruction, as well as sensor signal processing for wearable healthcare systems.
+                </p>
+                <br>
+                <p>
+                    Before joining the PhD program, I worked for several years as a computer vision engineer and research assistant where I gathered practical experiences in AI-driven solutions, machine learning, and computer vision. I completed my Master's in Computer Science from Pakistan Institute of Engineering & Applied Sciences and my Bachelor's in Electrical Engineering from University of Engineering and Technology, Lahore.
+                </p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-box">
+                    <h3>🔬 Research Interests</h3>
+                    <ul class="interests-list">
+                        <li>Medical Imaging</li>
+                        <li>Explainable AI (XAI)</li>
+                        <li>3D Scene Reconstruction</li>
+                        <li>Computer Vision</li>
+                        <li>Object Detection (YOLO, DETR)</li>
+                        <li>Generative Models (GANs)</li>
+                        <li>Gaussian Splatting</li>
+                        <li>Sensor Signal Processing</li>
+                        <li>Wearable Healthcare Systems</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>🎓 Education</h3>
+                    <div class="education-list">
+                        <div class="education-item">
+                            <div class="education-title">PhD in Computer Science, August 2023 - Present</div>
+                            <div class="education-meta">CGPA: 4.0/4.0</div>
+                            <div class="education-school">The University of Texas at Arlington</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-title">MS in Computer Science, 2018 - 2020</div>
+                            <div class="education-meta">CGPA: 3.8/4.0</div>
+                            <div class="education-school">Pakistan Institute of Engineering & Applied Sciences</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-title">BSc in Electrical Engineering, 2014 - 2018</div>
+                            <div class="education-meta">CGPA: 3.52/4.0</div>
+                            <div class="education-school">University of Engineering and Technology</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#awards">Awards</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="card">
-                <p style="font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto;">
-                    Ph.D. candidate in Computer Science with a strong interest in medical imaging, explainable AI, and 3D scene reconstruction. My work spans across computer vision, including object detection (RT-DETR, DINO-DETR, YOLO), generative models (GANs), and Gaussian splatting for 3D reconstruction, as well as sensor signal processing for wearable healthcare systems.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="card">
-                <div class="education-item">
-                    <h3>Ph.D. in Computer Science</h3>
-                    <div class="date-location">August 2023 - Present | Arlington, Texas, USA</div>
-                    <p><strong>The University of Texas at Arlington</strong> | CGPA: 4.0/4.0</p>
-                </div>
-                
-                <div class="education-item">
-                    <h3>M.S. in Computer Science</h3>
-                    <div class="date-location">January 2018 - November 2020 | Islamabad, Pakistan</div>
-                    <p><strong>Pakistan Institute of Engineering & Applied Sciences</strong> | CGPA: 3.8/4.0</p>
-                </div>
-                
-                <div class="education-item">
-                    <h3>B.Sc. in Electrical Engineering</h3>
-                    <div class="date-location">September 2014 - June 2018 | Lahore, Pakistan</div>
-                    <p><strong>University of Engineering and Technology</strong> | CGPA: 3.52/4.0</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="card">
+            <div class="full-section">
+                <h3>💼 Work Experience</h3>
                 <div class="experience-item">
-                    <h3>Research Assistant</h3>
-                    <div class="date-location">August 2022 – August 2023 | Tuscaloosa, Alabama</div>
-                    <p><strong>Computer Laboratory of Ambient and Wearable Systems</strong></p>
-                    <ul>
-                        <li>Designed an AI system to detect eating events using signals from wearable sensors mounted on eyeglasses</li>
-                        <li>Processed time-series data from accelerometer and piezoelectric muscle sensors to capture head movement and chewing patterns</li>
-                        <li>Implemented a semi-supervised autoencoder to extract meaningful features from unlabeled sensor data</li>
-                        <li>Configured and calibrated wearable sensors for reliable signal acquisition during real-world use</li>
-                    </ul>
+                    <div class="item-header">
+                        <div class="item-title">Research Assistant</div>
+                        <div class="item-meta">August 2022 – August 2023</div>
+                        <div class="item-company">Computer Laboratory of Ambient and Wearable Systems</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Designed an AI system to detect eating events using signals from wearable sensors mounted on eyeglasses</li>
+                            <li>Processed time-series data from accelerometer and piezoelectric muscle sensors to capture head movement and chewing patterns</li>
+                            <li>Implemented a semi-supervised autoencoder to extract meaningful features from unlabeled sensor data</li>
+                            <li>Configured and calibrated wearable sensors for reliable signal acquisition during real-world use</li>
+                        </ul>
+                    </div>
                 </div>
-                
+
                 <div class="experience-item">
-                    <h3>Computer Vision Engineer</h3>
-                    <div class="date-location">November 2020 – October 2021 | Dublin, Ireland (Remote)</div>
-                    <p><strong>Evercam</strong></p>
-                    <ul>
-                        <li>Developed a custom GAN-based super-resolution model to enhance construction site video feeds from 4K to 8K</li>
-                        <li>Built an end-to-end computer vision pipeline using YOLO for object detection and counting</li>
-                        <li>Improved detection accuracy by integrating super-resolved frames with object tracking</li>
-                        <li>Deployed the full pipeline on AWS for scalable, low-cost construction site monitoring</li>
-                    </ul>
+                    <div class="item-header">
+                        <div class="item-title">Computer Vision Engineer</div>
+                        <div class="item-meta">November 2020 – October 2021</div>
+                        <div class="item-company">Evercam - Dublin, Ireland (Remote)</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Developed a custom GAN-based super-resolution model to enhance construction site video feeds from 4K to 8K</li>
+                            <li>Built an end-to-end computer vision pipeline using YOLO for object detection and counting</li>
+                            <li>Improved detection accuracy by integrating super-resolved frames with object tracking</li>
+                            <li>Deployed the full pipeline on AWS for scalable, low-cost construction site monitoring</li>
+                        </ul>
+                    </div>
                 </div>
-                
+
                 <div class="experience-item">
-                    <h3>Business Development Executive</h3>
-                    <div class="date-location">November 2021 – August 2022 | Islamabad, Pakistan</div>
-                    <p><strong>Red Buffer</strong></p>
-                    <ul>
-                        <li>Interfaced with clients to understand project goals and technical requirements for AI-driven solutions</li>
-                        <li>Authored machine learning and computer vision project proposals with clear methodologies and timelines</li>
-                        <li>Collaborated with engineering teams to translate client requirements into actionable development plans</li>
-                    </ul>
+                    <div class="item-header">
+                        <div class="item-title">Business Development Executive</div>
+                        <div class="item-meta">November 2021 – August 2022</div>
+                        <div class="item-company">Red Buffer - Islamabad, Pakistan</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Interfaced with clients to understand project goals and technical requirements for AI-driven solutions</li>
+                            <li>Authored machine learning and computer vision project proposals with clear methodologies and timelines</li>
+                            <li>Collaborated with engineering teams to translate client requirements into actionable development plans</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Selected Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Beyond Detection: Comparative Explainability Study on Trypanosoma cruzi</h3>
-                    <div class="project-meta">Cyber-Physical System Security Lab @ UTA, 2025</div>
-                    <p>Developed an explainable deep learning framework for automated detection of Trypanosoma cruzi in microscopy images using YOLOv8 and DINO-DETR. Proposed novel query-specific attention explainability methods and benchmarked 10 CAM-based interpretability techniques.</p>
+            <div class="full-section">
+                <h3>🚀 Selected Projects</h3>
+                <div class="project-item">
+                    <div class="item-header">
+                        <div class="item-title">Beyond Detection: Comparative Explainability Study on Trypanosoma cruzi</div>
+                        <div class="item-meta">Cyber-Physical System Security Lab @ UTA, 2025</div>
+                    </div>
+                    <div class="item-description">
+                        Developed an explainable deep learning framework for automated detection of Trypanosoma cruzi in microscopy images using YOLOv8 and DINO-DETR. Proposed novel query-specific attention explainability methods and benchmarked 10 CAM-based interpretability techniques.
+                    </div>
                 </div>
-                
-                <div class="project-card">
-                    <h3>Enhanced Sparse-View Tomographic Reconstruction Using Gaussian Splatting</h3>
-                    <div class="project-meta">Cyber-Physical System Security Lab @ UTA, 2025</div>
-                    <p>Developed a 3D CT reconstruction pipeline for sparse-view X-ray projections using Gaussian Splatting. Achieved +3.08% PSNR and +3.21% SSIM improvements while reducing Gaussians by 10%.</p>
+
+                <div class="project-item">
+                    <div class="item-header">
+                        <div class="item-title">Enhanced Sparse-View Tomographic Reconstruction Using Gaussian Splatting</div>
+                        <div class="item-meta">Cyber-Physical System Security Lab @ UTA, 2025</div>
+                    </div>
+                    <div class="item-description">
+                        Developed a 3D CT reconstruction pipeline for sparse-view X-ray projections using Gaussian Splatting. Achieved +3.08% PSNR and +3.21% SSIM improvements while reducing Gaussians by 10%.
+                    </div>
                 </div>
-                
-                <div class="project-card">
-                    <h3>DAPS-AGF: Depth-Aware Perceptual Similarity with Adaptive Gradient Filtering</h3>
-                    <div class="project-meta">Cyber-Physical System Security Lab @ UTA, 2024</div>
-                    <p>Developed a 3D scene reconstruction framework for outdoor environments. Demonstrated superior visual quality with +3.05% SSIM, +3.94% PSNR, and −17.78% LPIPS compared to baseline.</p>
+
+                <div class="project-item">
+                    <div class="item-header">
+                        <div class="item-title">DAPS-AGF: Depth-Aware Perceptual Similarity with Adaptive Gradient Filtering</div>
+                        <div class="item-meta">Cyber-Physical System Security Lab @ UTA, 2024</div>
+                    </div>
+                    <div class="item-description">
+                        Developed a 3D scene reconstruction framework for outdoor environments. Demonstrated superior visual quality with +3.05% SSIM, +3.94% PSNR, and −17.78% LPIPS compared to baseline.
+                    </div>
                 </div>
-                
-                <div class="project-card">
-                    <h3>SOK: Modeling Post-Hoc Explainability in Clinical Decision Support Systems</h3>
-                    <div class="project-meta">Cyber-Physical System Security Lab @ UTA, 2024 – Present</div>
-                    <p>Conducted comprehensive analysis of post-hoc explainability techniques for clinical decision support. Implemented and benchmarked SHAP, LIME, Grad-CAM, and other XAI methods across tabular and medical image datasets.</p>
+
+                <div class="project-item">
+                    <div class="item-header">
+                        <div class="item-title">SOK: Modeling Post-Hoc Explainability in Clinical Decision Support Systems</div>
+                        <div class="item-meta">Cyber-Physical System Security Lab @ UTA, 2024 – Present</div>
+                    </div>
+                    <div class="item-description">
+                        Conducted comprehensive analysis of post-hoc explainability techniques for clinical decision support. Implemented and benchmarked SHAP, LIME, Grad-CAM, and other XAI methods across tabular and medical image datasets.
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="publications">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <div class="publications">
-                <ul>
+            <div class="full-section">
+                <h3>📚 Publications</h3>
+                <ul class="publications-list">
                     <li><strong>A. Yousaf</strong>, et al. "Beyond Detection: Comparative Explainability Study on Trypanosoma cruzi Using CAMs and DETR Attention", <em>IEEE BHI, 2025</em>.</li>
                     <li><strong>A. Yousaf</strong>, et al. "DAPS-AGF: Depth-Aware Perceptual Similarity with Adaptive Gradient Filtering for Enhanced Outdoor Scene Reconstruction", <em>ICCV E2E3D, 2025</em>.</li>
                     <li><strong>A. Yousaf</strong>, et al. "Food Intake Detection in the Face of Limited Sensor Signal Annotations", <em>International Conference on Communications and Electronics (ICCE), 2024</em>.</li>
                     <li><strong>A. Yousaf</strong>, et al. "Protein Active Site Prediction for Early Drug Discovery and Designing", <em>International Review of Applied Sciences and Engineering (IRASE), 2021</em>.</li>
                 </ul>
             </div>
-        </div>
-    </section>
 
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="card">
+            <div class="full-section">
+                <h3>⚡ Technical Skills</h3>
                 <div class="skills-grid">
                     <div class="skill-category">
                         <h4>Programming Languages</h4>
@@ -409,43 +590,16 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="awards">
-        <div class="container">
-            <h2 class="section-title">Awards & Fellowships</h2>
-            <div class="awards">
-                <ul>
+            <div class="full-section">
+                <h3>🏆 Awards & Fellowships</h3>
+                <ul class="awards-list">
                     <li><strong>STEM Fellowship</strong> - UTA, 2023 - Present, USA</li>
                     <li><strong>PIEAS Fellowship</strong> - PIEAS, 2019 - 2020, Pakistan</li>
                     <li><strong>PEEF Scholarship</strong> - UET, 2014 - 2018, Pakistan</li>
                 </ul>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Aqsa Yousaf. All rights reserved.</p>
-            <p>Built with passion for AI and Computer Vision</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    </div>
 </body>
 </html>
